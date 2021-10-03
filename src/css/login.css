@@ -1,0 +1,24 @@
+.background.half {
+  background: #7389a3;
+  opacity: 50%;
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, bottom center;
+  background-repeat: no-repeat;
+  width: 50vw;
+  height: 100vh;
+}
+
+.login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fields.loginbox {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vh / 2);
+}
