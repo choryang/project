@@ -12,6 +12,7 @@ const BoardView: FC = () => {
   const Items = [
     {
       id: 1,
+      name: "you",
       createdAt: "2021-10-01",
       updatedAt: "2021-10-01",
       title: "test1",
@@ -21,6 +22,7 @@ const BoardView: FC = () => {
     },
     {
       id: 2,
+      name: "you",
       createdAt: "2021-10-01",
       updatedAt: "2021-10-01",
       title: "test2",
@@ -30,6 +32,7 @@ const BoardView: FC = () => {
     },
     {
       id: 3,
+      name: "you",
       createdAt: "2021-10-01",
       updatedAt: "2021-10-01",
       title: "test3",
@@ -39,6 +42,7 @@ const BoardView: FC = () => {
     },
     {
       id: 4,
+      name: "you",
       createdAt: "2021-10-01",
       updatedAt: "2021-10-01",
       title: "test4",
@@ -48,6 +52,7 @@ const BoardView: FC = () => {
     },
     {
       id: 5,
+      name: "you",
       createdAt: "2021-10-01",
       updatedAt: "2021-10-01",
       title: "test5",
@@ -65,12 +70,11 @@ const BoardView: FC = () => {
         justifyContent: "center",
         alignItems: "center",
         background: "#f5f6f7",
-        opacity: "60%",
       }}
     >
       <header className="header">
         <Link to={"/"} className="link">
-          <h2 className="h2">Logo</h2>
+          <h2 className="h2">Find Your Pet</h2>
         </Link>
         <nav className="nav">
           <ul className="right">
@@ -114,6 +118,16 @@ const BoardView: FC = () => {
             >
               <Card style={{ margin: 10, padding: 20 }}>
                 <h3>{item.title}</h3>
+                <p
+                  style={{
+                    color: "#cccccc",
+                    fontSize: 13,
+                    fontWeight: "bold",
+                    lineHeight: "0.5em",
+                  }}
+                >
+                  {item.name}
+                </p>
                 <p className="ellipsis">{item.contents}</p>
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}

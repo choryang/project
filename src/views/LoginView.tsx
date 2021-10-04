@@ -10,7 +10,7 @@ const LoginView: FC = () => {
     <>
       <header className="header">
         <Link to={"/"} className="link">
-          <h2 className="h2">Logo</h2>
+          <h2 className="h2">Find Your Pet</h2>
         </Link>
       </header>
 
@@ -21,13 +21,13 @@ const LoginView: FC = () => {
             <form method="post" action="#">
               <div className="fields loginbox">
                 <div className="field">
-                  <input type="text" name="email" placeholder="Email" />
+                  <input type="text" name="email" placeholder="이메일" />
                 </div>
                 <div className="field">
                   <input
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="비밀번호"
                   />
                 </div>
               </div>
@@ -35,14 +35,14 @@ const LoginView: FC = () => {
                 <li>
                   <input
                     type="submit"
-                    value="Log In"
+                    value="로그인"
                     className="btn blue"
                     style={{ padding: "0 2em", marginTop: 20 }}
                   />
                 </li>
               </ul>
             </form>
-            <Link to={"/register"}>Sign Up</Link>
+            <Link to={"/register"}>회원가입</Link>
           </div>
         </section>
       </div>

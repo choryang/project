@@ -10,6 +10,7 @@ import { Card, Divider } from "@material-ui/core";
 const BoardDetail: FC = () => {
   const item = {
     id: 1,
+    name: "you",
     createdAt: "2021-10-01",
     updatedAt: "2021-10-01",
     title: "test1",
@@ -18,6 +19,106 @@ const BoardDetail: FC = () => {
     views: 1,
   };
 
+  const comments = [
+    {
+      id: 1,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [
+        {
+          id: 1,
+          name: "me",
+          comment:
+            "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+        },
+        {
+          id: 2,
+          name: "me",
+          comment:
+            "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 3,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 4,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 5,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 6,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 7,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 8,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 9,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 10,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 11,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+    {
+      id: 12,
+      name: "you",
+      comment:
+        "Lorem ipsum dolor sit amet et sapien sed elementum egestas dolor condimentum.",
+      sub: [],
+    },
+  ];
+
   return (
     <div
       style={{
@@ -25,14 +126,13 @@ const BoardDetail: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         background: "#f5f6f7",
-        opacity: "60%",
         height: window.innerHeight,
         position: "relative",
       }}
     >
       <header className="header">
         <Link to={"/"} className="link">
-          <h2 className="h2">Logo</h2>
+          <h2 className="h2">Find Your Pet</h2>
         </Link>
         <nav className="nav">
           <ul className="right">
@@ -58,6 +158,16 @@ const BoardDetail: FC = () => {
           }}
         >
           <h3>{item.title}</h3>
+          <p
+            style={{
+              color: "#cccccc",
+              fontSize: 13,
+              fontWeight: "bold",
+              lineHeight: "0.5em",
+            }}
+          >
+            {item.name}
+          </p>
           <p>{item.contents}</p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -88,9 +198,35 @@ const BoardDetail: FC = () => {
           </div>
           <Divider />
           <div>
-            <header>Comment</header>
-            <div>
-              <div></div>
+            <header>
+              <b>댓글</b>
+            </header>
+            <div style={{ height: 500, overflowY: "scroll" }}>
+              {comments.map((item) => {
+                return (
+                  <>
+                    <div key={item.id}>
+                      <p style={{ marginBottom: 0, fontWeight: "bold" }}>
+                        {item.name}
+                      </p>
+                      <p style={{ marginLeft: 5 }}>{item.comment}</p>
+                    </div>
+                    <div>
+                      {item.sub.map((sub) => {
+                        return (
+                          <div key={sub.id} style={{ marginLeft: 20 }}>
+                            <p style={{ marginBottom: 0, fontWeight: "bold" }}>
+                              {sub.name}
+                            </p>
+                            <p style={{ marginLeft: 5 }}>{sub.comment}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <Divider />
+                  </>
+                );
+              })}
             </div>
           </div>
         </Card>
@@ -106,7 +242,7 @@ const BoardDetail: FC = () => {
               overflowWrap: "break-word",
             }}
           ></textarea>
-          <button>Send</button>
+          <button>보내기</button>
         </div>
       </section>
     </div>

@@ -5,7 +5,7 @@ import "css/main.css";
 import "css/header.css";
 import "css/board.css";
 import View from "images/visibility.png";
-import { Card, Divider } from "@material-ui/core";
+import { Card, Divider, Input } from "@material-ui/core";
 
 const BoardRegister: FC = () => {
   return (
@@ -15,14 +15,13 @@ const BoardRegister: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         background: "#f5f6f7",
-        opacity: "60%",
         height: window.innerHeight,
         position: "relative",
       }}
     >
       <header className="header">
         <Link to={"/"} className="link">
-          <h2 className="h2">Logo</h2>
+          <h2 className="h2">Find Your Pet</h2>
         </Link>
         <nav className="nav">
           <ul className="right">
@@ -46,21 +45,34 @@ const BoardRegister: FC = () => {
             padding: 20,
             height: window.innerHeight,
           }}
-        ></Card>
-        <div
-          className="comment-input-wrapper"
-          style={{ position: "absolute", bottom: 0 }}
         >
-          <textarea
-            className="comment-box"
+          <input
+            placeholder="제목"
             style={{
-              minHeight: 20,
-              overflow: "scroll",
-              overflowWrap: "break-word",
+              width: "100%",
+              border: "none",
+              borderBottom: "1px solid #999999",
+              paddingBottom: 5,
+              background: "none",
+              fontWeight: "bold",
+              outline: "none",
             }}
+          />
+          <textarea
+            placeholder="메시지"
+            rows={6}
+            style={{ fontSize: 16, margin: "10px 0" }}
           ></textarea>
-          <button>Send</button>
-        </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <button>등록</button>
+          </div>
+        </Card>
       </section>
     </div>
   );

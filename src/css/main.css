@@ -684,6 +684,7 @@ h2 {
 @media screen and (max-width: 736px) {
   h2 {
     font-size: 1.5em;
+    line-height: 2em;
   }
 }
 
@@ -703,7 +704,7 @@ a {
   -webkit-transition: color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
-  color: #7389a3;
+  color: #9ac584;
 }
 
 sub {
@@ -779,7 +780,7 @@ button {
   -webkit-transition: background-color 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
-  background-color: #7389a3;
+  background-color: #9ac584;
   border: 0;
   border-radius: 3.5em;
   color: #ffffff;
@@ -836,7 +837,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 .button:hover,
 button:hover {
-  background-color: #a4c1e6;
+  background-color: #bde7a8;
 }
 
 input[type="button"]:active,
@@ -844,7 +845,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 .button:active,
 button:active {
-  background-color: #6280a5;
+  background-color: #8cc470;
 }
 
 input[type="button"].style2,
@@ -979,6 +980,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="url"],
+input[type="number"],
 select,
 textarea {
   -moz-appearance: none;
@@ -1017,6 +1019,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="url"],
+input[type="number"],
 select {
   line-height: 1.35em;
 }
@@ -1240,7 +1243,7 @@ ul.actions.fit.stacked {
 }
 
 .btn.blue {
-  background: #7389a3;
+  background: #9ac584;
   color: #ffffff !important;
   font-weight: bold;
   border-radius: 50px;
@@ -2369,7 +2372,7 @@ body.is-touch .main {
 /* Intro */
 
 #intro {
-  background: url("../images/intro.jpg");
+  background: url("../images/main01.jpg");
   background-size: cover;
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
@@ -2379,7 +2382,7 @@ body.is-touch .main {
 /* One */
 
 #one {
-  background: url("../images/one.jpg");
+  background: url("../images/main02.jpg");
   background-size: cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center;
@@ -2388,14 +2391,14 @@ body.is-touch .main {
 /* Two */
 
 #two {
-  background: url("../images/two.jpg");
+  background: url("../images/main03.jpg");
   background-size: cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center;
 }
 
 #three {
-  background: url("../images/one.jpg");
+  background: url("../images/main04.jpg");
   background-size: cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center;
@@ -2409,8 +2412,25 @@ body.is-touch .main {
   width: calc(100% / 2);
 }
 
+#board.information {
+  width: 850px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 #board-detail {
   width: calc(100% / 2);
+}
+
+@media screen and (max-width: 736px) {
+  #board,
+  #board-detail {
+    width: 100%;
+  }
+
+  #board.information {
+    width: 375px;
+  }
 }
 
 /* Contact */
