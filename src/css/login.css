@@ -1,3 +1,13 @@
+.contents {
+  display: flex;
+}
+
+@media screen and (max-width: 736px) {
+  .contents {
+    justify-content: center;
+  }
+}
+
 .background.half {
   background: #ffa153;
   opacity: 50%;
@@ -7,6 +17,12 @@
   background-repeat: no-repeat;
   width: 50vw;
   height: 100vh;
+}
+
+@media screen and (max-width: 736px) {
+  .background.half {
+    display: none;
+  }
 }
 
 .login {

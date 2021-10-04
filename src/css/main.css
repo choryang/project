@@ -2413,9 +2413,11 @@ body.is-touch .main {
 }
 
 #board.information {
-  width: 850px;
+  width: calc(100% - 600px);
   flex-wrap: wrap;
+  justify-content: flex-start;
   flex-direction: row;
+  margin: 0 auto;
 }
 
 #board-detail {
@@ -2430,6 +2432,7 @@ body.is-touch .main {
 
   #board.information {
     width: 375px;
+    background: #f5f6f7;
   }
 }
 

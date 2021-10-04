@@ -95,9 +95,8 @@ const InformationView: FC = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         background: "#f5f6f7",
-        height: "100vh",
+        height: window.innerHeight,
       }}
     >
       <header className="header">

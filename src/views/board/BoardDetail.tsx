@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import "css/main.css";
 import "css/header.css";
 import "css/board.css";
 import View from "images/visibility.png";
-import { Card, Divider } from "@material-ui/core";
+import Chat from "images/chat.png";
+import { Button, Card, Divider } from "@material-ui/core";
 
 const BoardDetail: FC = () => {
+  const [subCommenId, setSubCommentId] = useState(0);
+  const onSubCommentOpen = (id) => {
+    if (subCommenId === id) {
+      setSubCommentId(0);
+    } else {
+      setSubCommentId(id);
+    }
+  };
+
   const item = {
     id: 1,
     name: "you",
@@ -126,7 +136,6 @@ const BoardDetail: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         background: "#f5f6f7",
-        height: window.innerHeight,
         position: "relative",
       }}
     >
@@ -154,7 +163,6 @@ const BoardDetail: FC = () => {
           style={{
             margin: 10,
             padding: 20,
-            height: window.innerHeight,
           }}
         >
           <h3>{item.title}</h3>
@@ -201,7 +209,9 @@ const BoardDetail: FC = () => {
             <header>
               <b>댓글</b>
             </header>
-            <div style={{ height: 500, overflowY: "scroll" }}>
+            <div
+              style={{ height: 700, overflowY: "scroll", paddingBottom: 100 }}
+            >
               {comments.map((item) => {
                 return (
                   <>
@@ -210,6 +220,21 @@ const BoardDetail: FC = () => {
                         {item.name}
                       </p>
                       <p style={{ marginLeft: 5 }}>{item.comment}</p>
+                      <Button
+                        style={{
+                          maxWidth: 15,
+                          maxHeight: 15,
+                          minWidth: 15,
+                          padding: 0,
+                        }}
+                        onClick={() => onSubCommentOpen(item.id)}
+                      >
+                        <img
+                          src={Chat}
+                          alt="subchat"
+                          style={{ width: 15, height: 15 }}
+                        />
+                      </Button>
                     </div>
                     <div>
                       {item.sub.map((sub) => {
@@ -223,7 +248,20 @@ const BoardDetail: FC = () => {
                         );
                       })}
                     </div>
-                    <Divider />
+                    {subCommenId === item.id && (
+                      <div className="comment-input-wrapper sub">
+                        <textarea
+                          className="comment-box"
+                          style={{
+                            minHeight: 20,
+                            overflow: "scroll",
+                            overflowWrap: "break-word",
+                          }}
+                        ></textarea>
+                        <button>보내기</button>
+                      </div>
+                    )}
+                    <Divider style={{ marginTop: 10 }} />
                   </>
                 );
               })}
@@ -232,7 +270,7 @@ const BoardDetail: FC = () => {
         </Card>
         <div
           className="comment-input-wrapper"
-          style={{ position: "absolute", bottom: 0 }}
+          style={{ position: "absolute", bottom: 20 }}
         >
           <textarea
             className="comment-box"

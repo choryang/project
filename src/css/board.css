@@ -10,9 +10,18 @@
   margin: 0 20px;
 }
 
+.comment-input-wrapper.sub {
+  margin: 0;
+  width: calc((100vw / 2) - 80px);
+}
+
 @media screen and (max-width: 736px) {
   .comment-input-wrapper {
     width: calc(100vw - 40px);
+  }
+
+  .comment-input-wrapper.sub {
+    width: calc(100vw - 80px);
   }
 }
 
